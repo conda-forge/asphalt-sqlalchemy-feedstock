@@ -1,4 +1,4 @@
-{% set version = "5.0.1" %}
+{% set version = "5.1.0" %}
 
 package:
   name: asphalt-sqlalchemy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/asphalt-sqlalchemy/asphalt-sqlalchemy-{{ version }}.tar.gz
-  sha256: fba70f703435b518e20a57bd523203e59aab6e2a4dc3c7d018ab418e49a5a44a
+  sha256: 7ddfdf9f772e1193d25a1fec245f519c54ab0635b5387c536f0b3b77bf9c1a66
 
 build:
   noarch: python
