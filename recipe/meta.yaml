@@ -5,24 +5,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/asphalt-sqlalchemy/asphalt-sqlalchemy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/asphalt-sqlalchemy/asphalt-sqlalchemy-{{ version }}.tar.gz
   sha256: fba70f703435b518e20a57bd523203e59aab6e2a4dc3c7d018ab418e49a5a44a
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - asphalt >=4.9,<5
     - sqlalchemy >=2.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - asphalt.sqlalchemy
 
